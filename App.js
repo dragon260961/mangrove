@@ -26,7 +26,7 @@ const HomeStack = createStackNavigator(
   {
     //Defination of Navigaton from home screen
     Home: { screen: HomeScreen },
-    Staff: { screen: StaffScreen },
+    // Staff: { screen: StaffScreen },
   },
   {
     defaultNavigationOptions: {
@@ -43,7 +43,7 @@ const HomeStack = createStackNavigator(
 const StaffStack = createStackNavigator(
   {
     //Defination of Navigaton from home screen
-    Home: { screen: HomeScreen },
+    // Home: { screen: HomeScreen },
     Staff: { screen: StaffScreen },
   },
   {
@@ -62,8 +62,8 @@ const CustomerStack = createStackNavigator(
   {
     //Defination of Navigaton from setting screen
     Customer: { screen: CustomerScreen },
-    Staff: { screen: StaffScreen },
-    Packages: { screen: PackagesScreen },
+    // Staff: { screen: StaffScreen },
+    // Packages: { screen: PackagesScreen },
   },
   {
     defaultNavigationOptions: {
@@ -80,8 +80,8 @@ const CustomerStack = createStackNavigator(
 const PackagesStack = createStackNavigator(
   {
     //Defination of Navigaton from setting screen
-    Customer: { screen: CustomerScreen },
-    Staff: { screen: StaffScreen },
+    // Customer: { screen: CustomerScreen },
+    // Staff: { screen: StaffScreen },
     Packages: { screen: PackagesScreen },
   },
   {
@@ -99,8 +99,8 @@ const PackagesStack = createStackNavigator(
 const BookingStack = createStackNavigator(
   {
     //Defination of Navigaton from setting screen
-    Customer: { screen: CustomerScreen },
-    Staff: { screen: StaffScreen },
+    // Customer: { screen: CustomerScreen },
+    // Staff: { screen: StaffScreen },
     Booking: { screen: BookingScreen },
   },
   {

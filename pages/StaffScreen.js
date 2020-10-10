@@ -1,26 +1,88 @@
-//This is an example code for Bottom Navigation//
-import React from 'react';
-//import react in our code.
+import React, {Component} from 'react';
 import {
+  StyleSheet,
   Text,
   View,
   TouchableOpacity,
-  StyleSheet
+  Image,
+  Alert,
+  ScrollView,
+  FlatList,
+  Button,
+  ImageBackground,
 } from 'react-native';
-//import all the basic component we have used
-
-export default class StaffScreen extends React.Component {
-  //Detail Screen to show from any Open detail button
+// import Gallery from 'react-native-image-gallery';
+export default class StaffScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true,
+    };
+  }
+  componentDidMount() {
+    return fetch('http://172.16.28.202/mangrove/Database/Staff.php')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        this.setState({data: responseJson});
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+  clickEventListener() {
+    Alert.alert('Success', 'Product has beed added to cart');
+  }
   render() {
     return (
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
-        <Text>Details!</Text>
-      </View>
+    //   <ImageBackground
+    //     source={require('D:/application/WUbadminton/Image/back07.png')}
+    //     style={{flex: 1, resizeMode: 'cover'}}>
+        <View>
+          <ScrollView>
+            <View>
+              <FlatList
+                data={this.state.data}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={({item}) => (
+                  <View
+                    style={{
+                      backgroundColor: 'white',
+                      textAlign: 'center',
+                      minHeight: 10,
+                      minWidth: 10,
+                      elevation: 50,
+                      borderRadius: 10,
+                      fontSize: 20,
+                      marginTop: 15,
+                      marginLeft: 10,
+                      marginRight: 10,
+                      color: '#5e3881',
+                    }}>
+                    <Text style={{fontSize: 25, marginTop: 10, marginLeft: 50}}>
+                      ข้อมูล Staff
+                    </Text>
+                    <Text style={{fontSize: 16, marginTop: 10, marginLeft: 50}}>
+                    StaffID: {item.SId}
+                    </Text>
+                    <Text style={{fontSize: 16, marginTop: 10, marginLeft: 50}}>
+                    StaffName: {item.SName}
+                    </Text>
+                    <Text style={{fontSize: 16, marginTop: 10, marginLeft: 50}}>
+                    Telephone: {item.STelephone}
+                    </Text>
+                    {/* <Text style={{fontSize: 16, marginTop: 10, marginLeft: 50}}>
+                    Photo: {item.SPhoto}
+                    </Text> */}
+                  </View>
+                )}
+              />
+            </View>
+          
+                    
+        
+          </ScrollView>
+        </View>
+   
     );
   }
 }
