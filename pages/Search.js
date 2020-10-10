@@ -8,7 +8,7 @@ const MyComponent = () => {
   return ( 
 
     <Searchbar
-      placeholder="Search"
+      placeholder="SEARCH"
       onChangeText={onChangeSearch}
       value={searchQuery}
     />
