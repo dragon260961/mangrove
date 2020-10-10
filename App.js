@@ -1,57 +1,95 @@
-// Example: Example of SQLite Database in React Native
-// https://aboutreact.com/example-of-sqlite-database-in-react-native
-import 'react-native-gesture-handler';
+// 
 
-import * as React from 'react';
-import { Button, View, Text } from 'react-native';
+//This is an example code for Bottom Navigation//
+import React from 'react';
+import {
+  Button,
+  Text,
+  View,
+  TouchableOpacity,
+  StyleSheet
+} from 'react-native';
+//import all the basic component we have used
+import Ionicons from 'react-native-vector-icons/Ionicons';
+//import Ionicons to show the icon for bottom options
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+//import React Navigation
+import {createAppContainer} from 'react-navigation';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
+import {createStackNavigator} from 'react-navigation-stack';
 
-
-import Home from './pages/Home';
-import ViewAll from './pages/ViewAll';
-
-
-
-const Stack = createStackNavigator();
-
-const App = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{
-            title: 'Mobile', //Set Header Title
-            headerStyle: {
-              backgroundColor: '#009999', //Set Header color
-            },
-            headerTintColor: '#fff', //Set Header text color
-            headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
-            },
-          }}
-        />
-        <Stack.Screen
-          name="ViewAll"
-          component={ViewAll}
-          options={{
-            title: 'View All ', //Set Header Title
-            headerStyle: {
-              backgroundColor: '#009999', //Set Header color
-            },
-            headerTintColor: '#fff', //Set Header text color
-            headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
-            },
-          }}
-        />
-       
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
-
-export default App;
+import HomeScreen from './pages/HomeScreen';
+import SettingsScreen from './pages/SettingsScreen';
+import DetailsScreen from './pages/DetailsScreen';
+import ProfileScreen from './pages/ProfileScreen';
+const HomeStack = createStackNavigator(
+  {
+    //Defination of Navigaton from home screen
+    Home: { screen: HomeScreen },
+    Details: { screen: DetailsScreen },
+  },
+  {
+    defaultNavigationOptions: {
+      //Header customization of the perticular Screen
+      headerStyle: {
+        backgroundColor: '#42f44b',
+      },
+      headerTintColor: '#FFFFFF',
+      title: 'MANGROVE',
+      //Header title
+    },
+  }
+);
+const SettingsStack = createStackNavigator(
+  {
+    //Defination of Navigaton from setting screen
+    Settings: { screen: SettingsScreen },
+    Details: { screen: DetailsScreen },
+    Profile: { screen: ProfileScreen },
+  },
+  {
+    defaultNavigationOptions: {
+      //Header customization of the perticular Screen
+      headerStyle: {
+        backgroundColor: '#42f44b',
+      },
+      headerTintColor: '#FFFFFF',
+      title: 'Settings',
+      //Header title
+    },
+  }
+);
+const App = createBottomTabNavigator(
+  {
+    Staff: { screen: HomeStack },
+    Settings: { screen: SettingsStack },
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let IconComponent = Ionicons;
+        let iconName;
+        if (routeName === 'Staff') {
+          iconName = `ios-information-circle${focused ?
+            '' : '-outline'
+          }`;
+        } else if (routeName === 'Settings') {
+          iconName = `ios-checkmark-circle${focused ?
+            '' : '-outline'
+          }`;
+        }
+        return <IconComponent
+                 name={iconName}
+                 size={25}
+                 color={tintColor}
+               />;
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: '#42f44b',
+      inactiveTintColor: 'gray',
+    },
+  }
+);
+export default createAppContainer(App);
