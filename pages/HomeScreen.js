@@ -19,12 +19,7 @@ export default class HomeScreen extends React.Component {
           justifyContent: 'center',
           alignItems: 'center'
         }}>
-        <Text
-          style={{
-            marginTop: 50,
-            fontSize: 25
-          }}>MANGROVE</Text>
-        <View
+        {/* <View
           style={{
             flex: 1,
             justifyContent: 'center',
@@ -44,7 +39,7 @@ export default class HomeScreen extends React.Component {
             }>
             <Text>Open Details Screen</Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
       </View>
     );
   }

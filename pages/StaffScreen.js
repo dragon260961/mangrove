@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 //import all the basic component we have used
 
-export default class DetailsScreen extends React.Component {
+export default class StaffScreen extends React.Component {
   //Detail Screen to show from any Open detail button
   render() {
     return (

@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 //import all the basic component we have used
 
-export default class ProfileScreen extends React.Component {
+export default class PackagesScreen extends React.Component {
   //Profile Screen to show from Open profile button
   render() {
     return (
