@@ -21,6 +21,7 @@ import CustomerScreen from './pages/CustomerScreen';
 import StaffScreen from './pages/StaffScreen';
 import PackagesScreen from './pages/PackagesScreen';
 import BookingScreen from './pages/BookingScreen';
+import Search from './pages/Search';
 
 const HomeStack = createStackNavigator(
   {
@@ -115,6 +116,25 @@ const BookingStack = createStackNavigator(
     },
   }
 );
+const SearchStack = createStackNavigator(
+  {
+    //Defination of Navigaton from setting screen
+    // Customer: { screen: CustomerScreen },
+    // Staff: { screen: StaffScreen },
+    Search: { screen: Search },
+  },
+  {
+    defaultNavigationOptions: {
+      //Header customization of the perticular Screen
+      headerStyle: {
+        backgroundColor: '#336633',
+      },
+      headerTintColor: '#FFFFFF',
+      title: 'Webview',
+      //Header title
+    },
+  }
+);
 
 
 
@@ -128,6 +148,7 @@ const App = createBottomTabNavigator(
     Customer: { screen: CustomerStack },
     Packages: { screen: PackagesStack },
     Booking: { screen: BookingStack },
+    Search: { screen: SearchStack },
   },
   // {
   //   defaultNavigationOptions: ({ navigation }) => ({
