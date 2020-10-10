@@ -21,6 +21,7 @@ import CustomerScreen from './pages/CustomerScreen';
 import StaffScreen from './pages/StaffScreen';
 import PackagesScreen from './pages/PackagesScreen';
 import BookingScreen from './pages/BookingScreen';
+import WebViews from './pages/WebViews';
 import Search from './pages/Search';
 
 const HomeStack = createStackNavigator(
@@ -135,7 +136,6 @@ const SearchStack = createStackNavigator(
     },
   }
 );
-
 
 
 
