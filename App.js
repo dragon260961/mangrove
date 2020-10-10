@@ -1,108 +1,3 @@
-// // Example: Example of SQLite Database in React Native
-// // https://aboutreact.com/example-of-sqlite-database-in-react-native
-// import 'react-native-gesture-handler';
-
-// import * as React from 'react';
-// import { Button, View, Text } from 'react-native';
-
-// import { NavigationContainer } from '@react-navigation/native';
-// import { createStackNavigator } from '@react-navigation/stack';
-
-
-// import Home from './pages/Home';
-// import Staff from './pages/Staff';
-// import Products from './pages/Products';
-// import Customer from './pages/Customer';
-// import Booking from './pages/Booking';
-
-// const Stack = createStackNavigator();
-
-// const App = () => {
-//   return (
-//     <NavigationContainer>
-//       <Stack.Navigator initialRouteName="Home">
-//         <Stack.Screen
-//           name="Home"
-//           component={Home}
-//           options={{
-//             title: 'Mobile', //Set Header Title
-//             headerStyle: {
-//               backgroundColor: '#009999', //Set Header color
-//             },
-//             headerTintColor: '#fff', //Set Header text color
-//             headerTitleStyle: {
-//               fontWeight: 'bold', //Set Header text style
-//             },
-//           }}
-//         />
-
-//         <Stack.Screen
-//           name="Staff"
-//           component={Staff}
-//           options={{
-//             title: 'Staff', //Set Header Title
-//             headerStyle: {
-//               backgroundColor: '#009999', //Set Header color
-//             },
-//             headerTintColor: '#fff', //Set Header text color
-//             headerTitleStyle: {
-//               fontWeight: 'bold', //Set Header text style
-//             },
-//           }}
-//         />
-
-//           <Stack.Screen
-//           name="Products"
-//           component={Products}
-//           options={{
-//             title: 'Products', //Set Header Title
-//             headerStyle: {
-//               backgroundColor: '#009999', //Set Header color
-//             },
-//             headerTintColor: '#fff', //Set Header text color
-//             headerTitleStyle: {
-//               fontWeight: 'bold', //Set Header text style
-//             },
-//           }}
-//         />
-
-//           <Stack.Screen
-//           name="Customer"
-//           component={Customer}
-//           options={{
-//             title: 'Customer', //Set Header Title
-//             headerStyle: {
-//               backgroundColor: '#009999', //Set Header color
-//             },
-//             headerTintColor: '#fff', //Set Header text color
-//             headerTitleStyle: {
-//               fontWeight: 'bold', //Set Header text style
-//             },
-//           }}
-//         />
-
-//           <Stack.Screen
-//           name="Booking"
-//           component={Booking}
-//           options={{
-//             title: 'Booking', //Set Header Title
-//             headerStyle: {
-//               backgroundColor: '#009999', //Set Header color
-//             },
-//             headerTintColor: '#fff', //Set Header text color
-//             headerTitleStyle: {
-//               fontWeight: 'bold', //Set Header text style
-//             },
-//           }}
-//         />
-       
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   );
-// };
-
-// export default App;
-
 //This is an example code for Bottom Navigation//
 import React from 'react';
 import {
@@ -125,6 +20,7 @@ import HomeScreen from './pages/HomeScreen';
 import CustomerScreen from './pages/CustomerScreen';
 import StaffScreen from './pages/StaffScreen';
 import PackagesScreen from './pages/PackagesScreen';
+import BookingScreen from './pages/BookingScreen';
 
 const HomeStack = createStackNavigator(
   {
@@ -139,7 +35,7 @@ const HomeStack = createStackNavigator(
         backgroundColor: '#336633',
       },
       headerTintColor: '#FFFFFF',
-      title: 'MANGROVE',
+      title: 'FOREST TOUR',
       //Header title
     },
   }
@@ -205,7 +101,7 @@ const BookingStack = createStackNavigator(
     //Defination of Navigaton from setting screen
     Customer: { screen: CustomerScreen },
     Staff: { screen: StaffScreen },
-    Packages: { screen: PackagesScreen },
+    Booking: { screen: BookingScreen },
   },
   {
     defaultNavigationOptions: {
@@ -219,6 +115,7 @@ const BookingStack = createStackNavigator(
     },
   }
 );
+
 
 
 
