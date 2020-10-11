@@ -23,6 +23,7 @@ import PackagesScreen from './pages/PackagesScreen';
 import BookingScreen from './pages/BookingScreen';
 import Search from './pages/Search';
 import Conclution from './pages/Conclution';
+import QrCode from './pages/QrCode';
 
 const HomeStack = createStackNavigator(
   {
@@ -155,7 +156,25 @@ const SearchStack = createStackNavigator(
     },
   }
 );
-
+const QrCodeStack = createStackNavigator(
+  {
+    //Defination of Navigaton from setting screen
+    // Customer: { screen: CustomerScreen },
+    // Staff: { screen: StaffScreen },
+    Search: { screen: QrCode },
+  },
+  {
+    defaultNavigationOptions: {
+      //Header customization of the perticular Screen
+      headerStyle: {
+        backgroundColor: '#336633',
+      },
+      headerTintColor: '#FFFFFF',
+      title: 'QRCODE',
+      //Header title
+    },
+  }
+);
 
 
 
@@ -169,6 +188,7 @@ const App = createBottomTabNavigator(
     Booking: { screen: BookingStack },
     Cons: { screen: ConclutionStack },
     Search: { screen: SearchStack },
+    Qrcode: { screen: QrCodeStack },
   },
   // {
   //   defaultNavigationOptions: ({ navigation }) => ({
