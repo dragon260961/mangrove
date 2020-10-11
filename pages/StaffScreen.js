@@ -20,7 +20,7 @@ export default class StaffScreen extends Component {
     };
   }
   componentDidMount() {
-    return fetch('http://172.16.28.202/mangrove/Database/Staff.php')
+    return fetch('http://172.16.156.115/mangrove/Database/Staff.php')
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({data: responseJson});

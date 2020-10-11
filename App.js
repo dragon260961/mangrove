@@ -161,7 +161,7 @@ const QrCodeStack = createStackNavigator(
     //Defination of Navigaton from setting screen
     // Customer: { screen: CustomerScreen },
     // Staff: { screen: StaffScreen },
-    Search: { screen: QrCode },
+    QrCode: { screen: QrCode },
   },
   {
     defaultNavigationOptions: {
@@ -175,8 +175,6 @@ const QrCodeStack = createStackNavigator(
     },
   }
 );
-
-
 
 
 const App = createBottomTabNavigator(

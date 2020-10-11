@@ -20,7 +20,7 @@ export default class CustomerScreen extends Component {
     };
   }
   componentDidMount() {
-    return fetch('http://172.16.28.202/mangrove/Database/Customer.php')
+    return fetch('http://172.16.156.115/mangrove/Database/Customer.php')
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({data: responseJson});

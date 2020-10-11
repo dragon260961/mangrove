@@ -20,7 +20,7 @@ export default class PackagesScreen extends Component {
     };
   }
   componentDidMount() {
-    return fetch('http://172.16.28.202/mangrove/Database/Packages.php')
+    return fetch('http://172.16.156.115/mangrove/Database/Packages.php')
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({data: responseJson});

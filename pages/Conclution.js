@@ -20,7 +20,7 @@ export default class Conclution extends Component {
     };
   }
   componentDidMount() {
-    return fetch('http://172.16.28.202/mangrove/Database/Booking.php')
+    return fetch('http://172.16.156.115/mangrove/Database/Booking.php')
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({data: responseJson});
