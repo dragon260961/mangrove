@@ -12,7 +12,7 @@ import {
   ImageBackground,
 } from 'react-native';
 // import Gallery from 'react-native-image-gallery';
-export default class StaffScreen extends Component {
+export default class Conclution extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +20,7 @@ export default class StaffScreen extends Component {
     };
   }
   componentDidMount() {
-    return fetch('http://172.16.28.202/mangrove/Database/Staff.php')
+    return fetch('http://172.16.28.202/mangrove/Database/Booking.php')
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({data: responseJson});
@@ -59,21 +59,26 @@ export default class StaffScreen extends Component {
                       color: '#5e3881',
                     }}>
                     <Text style={{fontSize: 25, marginTop: 10, marginLeft: 50}}>
-                      ข้อมูล Staff
-                    </Text>
-                    <Image source={require('D:/xampp7/htdocs/mangrove/image/StaffsPhoto/7503.jpg')} />
-                    <Text style={{fontSize: 16, marginTop: 10, marginLeft: 50}}>
-                    StaffID: {item.SId}
+                      ข้อมูล Conclution
                     </Text>
                     <Text style={{fontSize: 16, marginTop: 10, marginLeft: 50}}>
-                    StaffName: {item.SName}
+                    CustomerID: {item.CId}
                     </Text>
                     <Text style={{fontSize: 16, marginTop: 10, marginLeft: 50}}>
-                    Telephone: {item.STelephone}
+                    Garden Tour: {item.GTour}
                     </Text>
-                    {/* <Text style={{fontSize: 16, marginTop: 10, marginLeft: 50}}>
-                    Photo: {item.SPhoto}
-                    </Text> */}
+                    <Text style={{fontSize: 16, marginTop: 10, marginLeft: 50}}>
+                    TTour: {item.TTour}
+                    </Text>
+                    <Text style={{fontSize: 16, marginTop: 10, marginLeft: 50}}>
+                    Lunch: {item.Lunch}
+                    </Text>
+                    <Text style={{fontSize: 16, marginTop: 10, marginLeft: 50}}>
+                    Dinner: {item.Dinner}
+                    </Text>
+                    <Text style={{fontSize: 16, marginTop: 10, marginLeft: 50}}>
+                    Date: {item.Date}
+                    </Text>
                   </View>
                 )}
               />
